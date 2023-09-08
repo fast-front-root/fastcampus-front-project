@@ -16,7 +16,7 @@ const View = () => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <Text>font color is {vars.colors.$static.light.red[500]}</Text>
+      <Text>font color is {vars.colors.$static.light.red[500]} {vars.box.radii.base}</Text>
       <a
         className="App-link"
         href="https://reactjs.org"
