@@ -19,7 +19,7 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "esbuild": "^0.16.17",
+    "@fastcampus/esbuild-config": "workspace:^",
     "typescript": "^5.2.2"
   }
 }
