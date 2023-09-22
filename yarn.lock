@@ -2049,6 +2049,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@fastcampus/react-components-button@workspace:^, @fastcampus/react-components-button@workspace:packages/react/components/button":
+  version: 0.0.0-use.local
+  resolution: "@fastcampus/react-components-button@workspace:packages/react/components/button"
+  dependencies:
+    "@fastcampus/esbuild-config": "workspace:^"
+    "@fastcampus/themes": "workspace:^"
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
+    "@vanilla-extract/css": ^1.13.0
+    "@vanilla-extract/dynamic": ^2.0.3
+    "@vanilla-extract/esbuild-plugin": ^2.3.0
+    "@vanilla-extract/recipes": ^0.5.0
+    "@vanilla-extract/sprinkles": ^1.6.1
+    autoprefixer: ^10.4.15
+    clsx: ^2.0.0
+    postcss: ^8.4.29
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.2.2
+  peerDependencies:
+    "@fastcampus/themes": "workspace:^"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@fastcampus/react-components-layout@workspace:^, @fastcampus/react-components-layout@workspace:packages/react/components/layout":
   version: 0.0.0-use.local
   resolution: "@fastcampus/react-components-layout@workspace:packages/react/components/layout"
@@ -2077,6 +2102,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@fastcampus/storybook@workspace:services/storybook"
   dependencies:
+    "@fastcampus/react-components-button": "workspace:^"
     "@fastcampus/react-components-layout": "workspace:^"
     "@fastcampus/themes": "workspace:^"
     "@storybook/addon-essentials": ^7.4.0
@@ -4671,6 +4697,15 @@ __metadata:
     media-query-parser: ^2.0.2
     outdent: ^0.8.0
   checksum: 35c88718d451cb71e16a2cc0ece045e51cc84f8da29f92c4cbd6bff333d2fd35a724e95c1affd9d9df9ac67c9a18a53853e79afb8bbae70f2396ba5bbece2b16
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/dynamic@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@vanilla-extract/dynamic@npm:2.0.3"
+  dependencies:
+    "@vanilla-extract/private": ^1.0.3
+  checksum: 9ad4068d7e28361a7aca46b5f14094e74613428fb600e54227d8ba7a35926c0d7339de1876eb2b3563f6d97c0f08fa09d5ff597f76776f8edca37510165682b0
   languageName: node
   linkType: hard
 

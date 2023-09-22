@@ -2,6 +2,7 @@
   "name": "@fastcampus/storybook",
   "packageManager": "yarn@3.6.3",
   "devDependencies": {
+    "@fastcampus/react-components-button": "workspace:^",
     "@fastcampus/react-components-layout": "workspace:^",
     "@fastcampus/themes": "workspace:^",
     "@storybook/addon-essentials": "^7.4.0",
