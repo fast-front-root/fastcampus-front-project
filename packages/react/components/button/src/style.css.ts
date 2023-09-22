@@ -1,5 +1,5 @@
 import { recipe } from '@vanilla-extract/recipes';
-import { createVar } from '@vanilla-extract/css';
+import { createVar, keyframes } from '@vanilla-extract/css';
 import { classes, vars } from '@fastcampus/themes';
 
 export const enableColorVariant = createVar(); // 500
@@ -23,6 +23,16 @@ export const buttonStyle = recipe({
       opacity: 0.4,
       cursor: "not-allowed",
     },
+    '&[data-loading="true"]': {
+      "& span": {
+        opacity: 0,
+      },
+    },
+    '&:focus-visible': {
+      outline: "none",
+
+      boxShadow: vars.box.shadows.outline,
+    }
   },
   variants: {
     size: {
@@ -87,6 +97,75 @@ export const buttonStyle = recipe({
         "&:active:not([disabled])": {
           backgroundColor: activeColorVariant,
         },
+      },
+    },
+  },
+});
+
+export const spanStyle = recipe({
+  base: {
+    display: "flex",
+    alignItems: "center",
+  },
+  variants: {
+    size: {
+      xs: {
+        ...classes.typography.text.xs,
+        fontWeight: vars.typography.fontWeight[600],
+      },
+      sm: {
+        ...classes.typography.text.sm,
+        fontWeight: vars.typography.fontWeight[600],
+      },
+      md: {
+        ...classes.typography.text.md,
+        fontWeight: vars.typography.fontWeight[600],
+      },
+      lg: {
+        ...classes.typography.text.lg,
+        fontWeight: vars.typography.fontWeight[600],
+      },
+    },
+  },
+});
+
+const spinKeyframes = keyframes({
+  "0%": { transform: "rotate(0deg)" },
+  "100%": { transform: "rotate(360deg)" },
+});
+
+export const spinnerStyle = recipe({
+  base: {
+    position: "absolute",
+    animation: `${spinKeyframes} 0.45s linear infinite`,
+    display: "inline-block",
+    borderTop: "2px solid currentcolor",
+    borderRight: "2px solid currentcolor",
+    borderBottom: "2px solid transparent",
+    borderLeft: "2px solid transparent",
+    borderRadius: "50%",
+  },
+  variants: {
+    size: {
+      xs: {
+        width: vars.typography.fontSize[12],
+        height: vars.typography.fontSize[12],
+        left: `calc(50% - ${vars.typography.fontSize[12]}/2)`,
+      },
+      sm: {
+        width: vars.typography.fontSize[14],
+        height: vars.typography.fontSize[14],
+        left: `calc(50% - ${vars.typography.fontSize[14]}/2)`,
+      },
+      md: {
+        width: vars.typography.fontSize[16],
+        height: vars.typography.fontSize[16],
+        left: `calc(50% - ${vars.typography.fontSize[16]}/2)`,
+      },
+      lg: {
+        width: vars.typography.fontSize[18],
+        height: vars.typography.fontSize[18],
+        left: `calc(50% - ${vars.typography.fontSize[18]}/2)`,
       },
     },
   },

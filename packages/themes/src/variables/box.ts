@@ -54,5 +54,6 @@ export const shadows = {
   inner: "0px 2px 4px 0px rgba(0, 0, 0, 0.06) inset",
   darkLg:
     "0px 15px 40px 0px rgba(0, 0, 0, 0.40), 0px 5px 10px 0px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)",
+  outline: "0 0 0 3px rgba(66, 153, 225, 0.6)",
 };
 

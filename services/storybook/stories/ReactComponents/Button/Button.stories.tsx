@@ -31,5 +31,7 @@ export const ButtonStory = {
     children: "Button",
     variant: "outline",
     isDisabled: false,
+    isLoading: false,
+    leftIcon: "😀",
   },
 };
