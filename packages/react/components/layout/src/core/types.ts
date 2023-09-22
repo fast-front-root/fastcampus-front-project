@@ -10,8 +10,8 @@ type ElementProps = Omit<React.HTMLAttributes<HTMLElement>, "as">;
 export type AsElementProps = AsProps & ElementProps;
 
 export type ColorProps = {
-  color: keyof typeof vars.colors.$scale & string;
-  background: keyof typeof vars.colors.$scale & string;
+  color?: keyof typeof vars.colors.$scale;
+  background?: keyof typeof vars.colors.$scale;
 }
 
 export type StyleProps = Parameters<typeof StyleSprinkles>[0] & ColorProps;

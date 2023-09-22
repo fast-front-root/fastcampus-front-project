@@ -27,7 +27,7 @@ const Divider = (props: DividerProps, ref: React.Ref<HTMLHRElement>) => {
       ref={ref}
       style={{
         borderStyle: variant,
-        borderColor: vars.colors.$scale?.[color]?.[200] ?? color,
+        borderColor: color && vars.colors.$scale?.[color]?.[200],
         ...borderStyle,
         ...props.style,
       }}
