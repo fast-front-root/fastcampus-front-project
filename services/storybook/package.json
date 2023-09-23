@@ -23,5 +23,8 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build": "storybook build"
+  },
+  "dependencies": {
+    "@fastcampus/react-hooks-button": "workspace:^"
   }
 }

@@ -4,8 +4,10 @@ import { clsx } from "clsx";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { activeColorVariant, buttonStyle, enableColorVariant, hoverColorVariant, spanStyle, spinnerStyle } from "./style.css";
 import { vars } from "@fastcampus/themes";
+import { useButton } from "@fastcampus/react-hooks-button";
 
 const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+  const { buttonProps, } = useButton(props);
   const {
     variant = "solid",
     size = "md",
@@ -13,9 +15,7 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
     leftIcon,
     rightIcon,
     isLoading,
-    isDisabled = false,
     children,
-    onKeyDown,
     style
   } = props;
 
@@ -26,32 +26,17 @@ const Button = (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
       ? vars.colors.$scale[color][700]
       : vars.colors.$scale[color][100];
 
-  const disabled = isDisabled || isLoading;
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    onKeyDown?.(event);
-
-    if (event.key === "Enter" || event.key === '13') {
-      event.preventDefault();
-      event.currentTarget.click(); 
-    }
-  }
-
   return (
     <button
-      {...props}
+      {...buttonProps}
+      // 기능 ^
       ref={ref}
-      onKeyDown={handleKeyDown}
-      onClick={() => { console.log('ttt')}}
-      role="button"
       className={clsx([
         buttonStyle({
           size,
           variant,
         }),
       ])}
-      data-loading={isLoading}
-      disabled={disabled}
       style={{
         ...assignInlineVars({
           [enableColorVariant]: endableColor,
