@@ -10,7 +10,7 @@
     "graph": "nx run-many --target=build --graph",
     "dev:all": "yarn dev:storybook & yarn dev:packages",
     "dev:storybook": "nx storybook @fastcampus/storybook",
-    "dev:packages": "nx run-many --target=dev --projects='@fastcampus/react-components-*'"
+    "dev:packages": "nx run-many --target=dev --projects='@fastcampus/react-hooks-*,@fastcampus/react-components-*'"
   },
   "packageManager": "yarn@3.6.3",
   "devDependencies": {

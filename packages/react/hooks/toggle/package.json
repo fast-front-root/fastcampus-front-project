@@ -1,5 +1,5 @@
 {
-  "name": "@fastcampus/react-hooks-button",
+  "name": "@fastcampus/react-hooks-toggle",
   "version": "0.0.1",
   "type": "module",
   "main": "dist/index.js",
@@ -29,7 +29,6 @@
     "react": "*"
   },
   "dependencies": {
-    "@fastcampus/react-hooks-toggle": "workspace:^",
     "clsx": "^2.0.0"
   }
 }

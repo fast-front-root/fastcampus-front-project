@@ -2104,6 +2104,23 @@ __metadata:
   resolution: "@fastcampus/react-hooks-button@workspace:packages/react/hooks/button"
   dependencies:
     "@fastcampus/esbuild-config": "workspace:^"
+    "@fastcampus/react-hooks-toggle": "workspace:^"
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
+    clsx: ^2.0.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.2.2
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@fastcampus/react-hooks-toggle@workspace:^, @fastcampus/react-hooks-toggle@workspace:packages/react/hooks/toggle":
+  version: 0.0.0-use.local
+  resolution: "@fastcampus/react-hooks-toggle@workspace:packages/react/hooks/toggle"
+  dependencies:
+    "@fastcampus/esbuild-config": "workspace:^"
     "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
     clsx: ^2.0.0

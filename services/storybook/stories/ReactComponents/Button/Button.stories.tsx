@@ -3,7 +3,7 @@ import { Button as _Button } from '@fastcampus/react-components-button';
 import "@fastcampus/react-components-layout/style.css";
 import { Text } from "@fastcampus/react-components-layout";
 import { vars } from "@fastcampus/themes";
-import { useButton } from "@fastcampus/react-hooks-button";
+import { useButton, useToggleButton } from "@fastcampus/react-hooks-button";
 
 export default {
   title: "React Components/Button",
@@ -65,4 +65,21 @@ export const TextButtonStory = {
       </Text>
     );
   }
+};
+
+
+export const ToggleButtonStory = {
+  render: () => {
+    const { buttonProps, isSelected } = useToggleButton({ elementType: 'button' }, false);
+
+    return (
+      <_Button
+        {...buttonProps}
+        variant={isSelected ? "solid" : "outline"}
+        color="green"
+      >
+        {isSelected ? "😀" : "😂"}
+      </_Button>
+    );
+  },
 };
