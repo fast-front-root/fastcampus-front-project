@@ -25,6 +25,7 @@
     "build": "storybook build"
   },
   "dependencies": {
+    "@fastcampus/react-components-accordion": "workspace:^",
     "@fastcampus/react-hooks-button": "workspace:^"
   }
 }
