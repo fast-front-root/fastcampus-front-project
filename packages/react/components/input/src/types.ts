@@ -11,3 +11,15 @@ export type InputProps = UseInputProps & {
   errorBorderColor?: string;
   focusBorderColor?: string;
 };
+
+export type InputGroupProps = {
+  color?: Color;
+  size?: Size;
+  children: React.ReactNode[];
+} & Omit<React.HTMLAttributes<HTMLDivElement>, "children">;
+
+export type InputLeftAddonProps = {
+  color?: Color;
+  size?: Size;
+  children: React.ReactNode;
+};
