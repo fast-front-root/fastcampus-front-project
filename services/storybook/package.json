@@ -27,6 +27,7 @@
   "dependencies": {
     "@fastcampus/react-components-accordion": "workspace:^",
     "@fastcampus/react-components-input": "workspace:^",
+    "@fastcampus/react-components-select": "workspace:^",
     "@fastcampus/react-hooks-button": "workspace:^"
   }
 }
