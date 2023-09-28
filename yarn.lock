@@ -2177,6 +2177,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@fastcampus/react-components-toast@workspace:^, @fastcampus/react-components-toast@workspace:packages/react/components/toast":
+  version: 0.0.0-use.local
+  resolution: "@fastcampus/react-components-toast@workspace:packages/react/components/toast"
+  dependencies:
+    "@fastcampus/esbuild-config": "workspace:^"
+    "@fastcampus/themes": "workspace:^"
+    "@types/react": ^18.2.21
+    "@types/react-dom": ^18.2.7
+    "@vanilla-extract/css": ^1.13.0
+    "@vanilla-extract/dynamic": ^2.0.3
+    "@vanilla-extract/esbuild-plugin": ^2.3.0
+    "@vanilla-extract/recipes": ^0.5.0
+    "@vanilla-extract/sprinkles": ^1.6.1
+    autoprefixer: ^10.4.15
+    clsx: ^2.0.0
+    postcss: ^8.4.29
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.2.2
+  peerDependencies:
+    "@fastcampus/themes": "workspace:^"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@fastcampus/react-hooks-button@workspace:^, @fastcampus/react-hooks-button@workspace:packages/react/hooks/button":
   version: 0.0.0-use.local
   resolution: "@fastcampus/react-hooks-button@workspace:packages/react/hooks/button"
@@ -2251,6 +2276,7 @@ __metadata:
     "@fastcampus/react-components-input": "workspace:^"
     "@fastcampus/react-components-layout": "workspace:^"
     "@fastcampus/react-components-select": "workspace:^"
+    "@fastcampus/react-components-toast": "workspace:^"
     "@fastcampus/react-hooks-button": "workspace:^"
     "@fastcampus/themes": "workspace:^"
     "@storybook/addon-essentials": ^7.4.0
