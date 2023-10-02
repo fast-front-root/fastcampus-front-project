@@ -26,3 +26,14 @@ export const InputGroupStory = {
     </InputGroup>
   ),
 };
+
+export const InputVariantFilledStory = {
+  render: () => <Input variant="filled" placeholder="dd" />,
+};
+
+export const InputFocusVisibleState = {
+  render: () => <Input />,
+  parameters: {
+    pseudo: { focusVisible: true },
+  },
+};

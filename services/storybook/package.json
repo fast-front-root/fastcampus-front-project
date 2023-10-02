@@ -5,6 +5,7 @@
     "@fastcampus/react-components-button": "workspace:^",
     "@fastcampus/react-components-layout": "workspace:^",
     "@fastcampus/themes": "workspace:^",
+    "@storybook/addon-a11y": "^7.4.5",
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",
     "@storybook/addon-links": "^7.4.0",
@@ -24,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.4.0",
+    "storybook-addon-pseudo-states": "^2.1.1",
     "storybook-addon-root-attributes": "^2.0.3",
     "vite": "^4.4.9",
     "vitest": "^0.34.6"
@@ -32,7 +34,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_6cd150f094040e8"
   },
   "dependencies": {
     "@fastcampus/react-components-accordion": "workspace:^",
@@ -40,5 +43,8 @@
     "@fastcampus/react-components-select": "workspace:^",
     "@fastcampus/react-components-toast": "workspace:^",
     "@fastcampus/react-hooks-button": "workspace:^"
-  }
+  },
+  "version": "",
+  "readme": "ERROR: No README data found!",
+  "_id": "@fastcampus/storybook@"
 }
