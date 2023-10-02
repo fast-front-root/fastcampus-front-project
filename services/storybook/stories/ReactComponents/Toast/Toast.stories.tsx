@@ -31,7 +31,7 @@ const Example = () => {
   );
 }
 
-export const ButtonStory = {
+export const ToastStory = {
   render: () => (
     <ToastProvider>
       <Example />
