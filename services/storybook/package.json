@@ -18,6 +18,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.5.1",
     "@vitejs/plugin-react": "^4.1.0",
+    "@vitest/ui": "^0.34.6",
     "happy-dom": "^12.5.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -29,6 +30,7 @@
   },
   "scripts": {
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build": "storybook build"
   },
