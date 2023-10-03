@@ -11,12 +11,15 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "dev"]
+        "cacheableOperations": ["build", "test", "dev"]
       }
     }
   },
   "targetDefaults": {
     "build": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
       "dependsOn": ["^build"]
     }
   }
