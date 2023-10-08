@@ -1,0 +1,10 @@
+@import "./fds.module.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--gray-900);
+  background: var(--gray-100);
+}
