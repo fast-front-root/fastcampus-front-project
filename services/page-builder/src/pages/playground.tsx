@@ -6,6 +6,7 @@ import { ImageSlice } from "../components/view/slices/Image";
 import { CDN_BASE_URL } from "../constants";
 import { SpacingSlice } from "../components/view/slices/Spacing";
 import { ImageSliderSlice } from "../components/view/slices/ImageSlider";
+import { ImageSliderSectionSlice } from "../components/view/slices/ImageSliderSection";
 
 const PlaygroundPage = () => {
   return (
@@ -97,24 +98,15 @@ const PlaygroundPage = () => {
           backgroundColor: vars.colors.$scale.gray[900],
         }}
       />
+      {/* 강의 프로그래밍 영역 */}
       <SpacingSlice
         sliceStyle={{
           backgroundColor: vars.colors.$scale.gray[900],
           height: 32,
         }}
       />
-      <TextSlice
+      <ImageSliderSectionSlice
         text={`🖥️ 프로그래밍`}
-        sliceStyle={{
-          textSize: 18,
-          textColor: "#32BFA1",
-          backgroundColor: vars.colors.$scale.gray[900],
-          textAlign: "left",
-          paddingX: 8,
-          textWeight: 700,
-        }}
-      />
-      <ImageSliderSlice
         images={[
           {
             imageUrl: `${CDN_BASE_URL}/test/lineup_programming_1.webp`,
@@ -146,7 +138,52 @@ const PlaygroundPage = () => {
           },
         ]}
         sliceStyle={{
-          backgroundColor: vars.colors.$static.light.gray[900],
+          textColor: "#32BFA1",
+          backgroundColor: vars.colors.$scale.gray[900],
+          paddingX: 8,
+        }}
+      />
+      <SpacingSlice
+        sliceStyle={{
+          backgroundColor: vars.colors.$scale.gray[900],
+          height: 32,
+        }}
+      />
+      {/* 강의 디자인 영역 */}
+      <SpacingSlice
+        sliceStyle={{
+          backgroundColor: vars.colors.$scale.gray[900],
+          height: 32,
+        }}
+      />
+      <ImageSliderSectionSlice
+        text={`🖥️ 디자인/일러스트`}
+        images={[
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_design_1.webp`,
+            alt: "강의 라인업 2 디자인: 강의 1",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_design_2.webp`,
+            alt: "강의 라인업 2 디자인: 강의 2",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_design_3.webp`,
+            alt: "강의 라인업 2 디자인: 강의 3",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_design_4.webp`,
+            alt: "강의 라인업 2 디자인: 강의 4",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_design_5.webp`,
+            alt: "강의 라인업 2 디자인: 강의 5",
+          },
+        ]}
+        sliceStyle={{
+          textColor: "#F26346",
+          backgroundColor: vars.colors.$scale.gray[900],
+          paddingX: 8,
         }}
       />
       <SpacingSlice

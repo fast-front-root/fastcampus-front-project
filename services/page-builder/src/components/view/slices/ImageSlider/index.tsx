@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 import { vars } from "@fastcampus/themes";
 import { convertSpacingRemToPx } from "@/src/utils/size";
 
-type Image = {
+export type Image = {
   imageUrl: string;
   alt: string;
 }
