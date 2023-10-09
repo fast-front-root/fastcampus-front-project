@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fastcampus/react-components-accordion": "workspace:^",
     "@fastcampus/react-components-layout": "workspace:^",
     "@fastcampus/themes": "workspace:^",
     "next": "13.5.4",
