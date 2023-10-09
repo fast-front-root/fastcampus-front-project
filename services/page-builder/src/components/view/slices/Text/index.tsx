@@ -1,5 +1,6 @@
 import { Text } from '@fastcampus/react-components-layout';
 import { vars } from '@fastcampus/themes';
+import { useMemo } from 'react';
 
 type Props = {
   text: string;
@@ -32,25 +33,32 @@ export const TextSlice: React.FC<Props> = ({ text, highlightTexts = [], sliceSty
     highlightTextWeight,
   } = sliceStyle ?? {};
 
-  const regex = new RegExp(`(${highlightTexts.join("|")})`, "gi");
-  const highlightedText = text.split(regex).map((word, index) => {
-    if (highlightTexts.some(query => new RegExp(query, 'i').test(word))) {
-      return (
-        <span
-          key={`${word}-${index}`}
-          style={{
-            color: highlightTextColor,
-            fontWeight: highlightTextWeight ?? textWeight,
-          }}
-        >
-          {word}
-        </span>
-      );
-    }
+  const hasHighlightText = highlightTexts.length > 0;
+  const highlightedText = useMemo(() => {
+    if (hasHighlightText) {
+      const regex = new RegExp(`(${highlightTexts.join("|")})`, "gi");
 
-    return word;
-  })
+      return text.split(regex).map((word, index) => {
+        if (highlightTexts.some(query => new RegExp(query, 'i').test(word))) {
+          return (
+            <span
+              key={`${word}-${index}`}
+              style={{
+                color: highlightTextColor,
+                fontWeight: highlightTextWeight ?? textWeight,
+              }}
+            >
+              {word}
+            </span>
+          );
+        }
 
+        return word;
+      });
+    };
+
+    return text;
+  }, [text, highlightTexts]);
 
   return (
     <Text
