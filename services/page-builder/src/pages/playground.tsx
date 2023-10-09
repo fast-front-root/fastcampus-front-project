@@ -5,6 +5,7 @@ import { TextSlice } from "../components/view/slices/Text";
 import { ImageSlice } from "../components/view/slices/Image";
 import { CDN_BASE_URL } from "../constants";
 import { SpacingSlice } from "../components/view/slices/Spacing";
+import { ImageSliderSlice } from "../components/view/slices/ImageSlider";
 
 const PlaygroundPage = () => {
   return (
@@ -113,12 +114,39 @@ const PlaygroundPage = () => {
           textWeight: 700,
         }}
       />
-      <ImageSlice
-        imageUrl={`${CDN_BASE_URL}/test/lineup_programming_1.webp`}
-        alt="강의 라인업: 프로그래밍 1"
+      <ImageSliderSlice
+        images={[
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_1.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 1",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_2.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 2",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_3.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 3",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_4.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 4",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_5.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 5",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_6.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 6",
+          },
+          {
+            imageUrl: `${CDN_BASE_URL}/test/lineup_programming_7.webp`,
+            alt: "강의 라인업 1 프로그래밍: 강의 7",
+          },
+        ]}
         sliceStyle={{
-          width: 280,
-          backgroundColor: vars.colors.$scale.gray[900],
+          backgroundColor: vars.colors.$static.light.gray[900],
         }}
       />
       <SpacingSlice
