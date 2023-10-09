@@ -5,7 +5,7 @@ type Props = {
   imageUrl: string;
   alt: string;
   sliceStyle?: {
-    width?: string;
+    width?: number;
     padding?: keyof typeof vars.box.spacing;
     paddingX?: keyof typeof vars.box.spacing;
     paddingY?: keyof typeof vars.box.spacing;
