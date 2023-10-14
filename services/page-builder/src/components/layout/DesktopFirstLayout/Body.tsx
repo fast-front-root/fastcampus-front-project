@@ -1,6 +1,6 @@
-import { Box, BoxProps } from "@fastcampus/react-components-layout";
+import { Flex, FlexProps } from "@fastcampus/react-components-layout";
 
-type Props = BoxProps;
+type Props = FlexProps;
 
 export const DesktopFirstBody = (props: Props) => {
   const { children, padding = 2, className, ...rest } = props;
@@ -8,8 +8,8 @@ export const DesktopFirstBody = (props: Props) => {
   const currentClassName = ["w-full min-h-screen relative top-0 pt-[56px]", className].join(" ");
 
   return (
-    <Box {...rest} padding={padding} className={currentClassName}>
+    <Flex {...rest} padding={padding} className={currentClassName}>
       {children}
-    </Box>
+    </Flex>
   );
 };

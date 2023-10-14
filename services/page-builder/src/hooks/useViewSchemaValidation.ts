@@ -11,7 +11,7 @@ type ValidateError = {
   message: string;
 }
 
-type ValidateViewSchemaProps = {
+export type ValidateViewSchemaProps = {
   viewSchema: string;
   onSuccess?: () => void;
   onError?: (error: ValidateError) => void;

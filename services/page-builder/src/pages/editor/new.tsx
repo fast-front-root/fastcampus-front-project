@@ -1,7 +1,9 @@
 import { JsonEditor } from "@/src/components/Editor/Json";
+import { JsonPresetList } from "@/src/components/EditorNewPage";
 import { DesktopFirstLayout } from "@/src/components/layout/DesktopFirstLayout";
 import { DesktopFirstBody } from "@/src/components/layout/DesktopFirstLayout/Body";
 import { DesktopFirstNav } from "@/src/components/layout/DesktopFirstLayout/Nav";
+import { DesktopFirstSideNav } from "@/src/components/layout/DesktopFirstLayout/SideNav";
 import { useViewSchemaValidation } from "@/src/hooks/useViewSchemaValidation";
 import { formatObjectToJson } from "@/src/utils/jsonEditor";
 import { ViewSliceSchemaSnippet } from "@/src/utils/jsonEditor/ViewSchemaSnippet";
@@ -62,7 +64,10 @@ const EditorNewPage: React.FC = () => {
           배포하기
         </Button>
       </DesktopFirstNav>
-      <DesktopFirstBody>
+      <DesktopFirstBody padding={0}>
+        <DesktopFirstSideNav>
+          <JsonPresetList validateViewSchema={validateViewSchema} schema={schema} setSchema={setSchema} />
+        </DesktopFirstSideNav>
         <JsonEditor
           value={schema}
           onChange={(value) => setSchema(value || "")}
