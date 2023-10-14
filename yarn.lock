@@ -2388,6 +2388,7 @@ __metadata:
     postcss: ^8
     react: ^18.2.0
     react-dom: ^18.2.0
+    short-unique-id: ^5.0.3
     swiper: ^10.3.1
     tailwindcss: ^3
     typescript: ^5.2.2
@@ -15972,6 +15973,16 @@ __metadata:
     vscode-oniguruma: ^1.7.0
     vscode-textmate: ^8.0.0
   checksum: 1173f6fa9531690a8cd4bf1d8e28c9eb9295af38a4c150cba6546e95f6e32bc96c7dd98826e39e688f1ca9d36b683a9a02ef77d51ce6495900b3a46ada64f828
+  languageName: node
+  linkType: hard
+
+"short-unique-id@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "short-unique-id@npm:5.0.3"
+  bin:
+    short-unique-id: bin/short-unique-id
+    suid: bin/short-unique-id
+  checksum: 9e5e02276972b103d3f2808280b82ab9f90006dd0aea6a253158e71e3ed618c3ac8dfe509a267080b19826a5d4e20d7a3d1adb2f13e166109f56946da3fdff9b
   languageName: node
   linkType: hard
 
