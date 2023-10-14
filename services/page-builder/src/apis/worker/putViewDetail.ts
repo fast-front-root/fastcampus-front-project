@@ -14,7 +14,5 @@ type Params = {
 };
 
 export const putViewDetail = async ({ viewId, data }: Params) => {
-  const response = await workerInstance.put(getPutViewDetailPath(viewId), data);
-
-  console.log("t", response);
+  await workerInstance.put(getPutViewDetailPath(viewId), data);
 };
