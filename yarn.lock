@@ -2378,6 +2378,7 @@ __metadata:
     "@fastcampus/react-components-accordion": "workspace:^"
     "@fastcampus/react-components-button": "workspace:^"
     "@fastcampus/react-components-layout": "workspace:^"
+    "@fastcampus/react-components-toast": "workspace:^"
     "@fastcampus/themes": "workspace:^"
     "@monaco-editor/react": ^4.6.0
     "@types/node": ^20.8.3
