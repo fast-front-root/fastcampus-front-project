@@ -1,31 +1,10 @@
+import { AccordionSliceSchema } from "@/src/utils/validation/schema/slices";
+import { SliceSchemaProps } from "@/src/utils/validation/schema/types";
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from "@fastcampus/react-components-accordion";
 import { Box, Text } from "@fastcampus/react-components-layout";
 import { vars } from "@fastcampus/themes";
 
-
-type AccordionContentItem = {
-  key: string;
-  title: string;
-  content: string;
-}
-
-type Props = {
-  accordionContents: AccordionContentItem[];
-  openedAccordion?: boolean;
-
-  sliceStyle?: {
-    padding?: keyof typeof vars.box.spacing;
-    paddingX?: keyof typeof vars.box.spacing;
-    paddingY?: keyof typeof vars.box.spacing;
-    backgroundColor?: string;
-    titleTextColor?: string;
-    titleTextSize?: keyof typeof vars.typography.fontSize;
-    titleTextWeight?: keyof typeof vars.typography.fontWeight;
-    contentTextColor?: string;
-    contentTextSize?: keyof typeof vars.typography.fontSize;
-    contentTextWeight?: keyof typeof vars.typography.fontWeight;
-  };
-};
+type Props = SliceSchemaProps<typeof AccordionSliceSchema>;
 
 export const AccordionSlice: React.FC<Props> = ({
   accordionContents,

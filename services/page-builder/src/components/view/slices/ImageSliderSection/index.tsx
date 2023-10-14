@@ -1,17 +1,10 @@
 import { vars } from "@fastcampus/themes";
-import { Image, ImageSliderSlice } from "../ImageSlider";
+import { ImageSliderSlice } from "../ImageSlider";
 import { TextSlice } from "../Text";
+import { SliceSchemaProps } from "@/src/utils/validation/schema/types";
+import { ImageSliderSectionSliceSchema } from "@/src/utils/validation/schema/slices";
 
-type Props = {
-  text: string;
-  images: Image[];
-  sliceStyle?: {
-    paddingX?: keyof typeof vars.box.spacing;
-    textColor?: string;
-    backgroundColor?: string;
-    imageItemWidth?: number;
-  }
-};
+type Props = SliceSchemaProps<typeof ImageSliderSectionSliceSchema>;
 
 export const ImageSliderSectionSlice: React.FC<Props> = ({ text, images, sliceStyle }: Props) => {
   const {
