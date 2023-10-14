@@ -1,6 +1,6 @@
+@import "./preflight.module.css";
 @import "./fds.module.css";
 
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
 

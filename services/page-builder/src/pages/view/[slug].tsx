@@ -1,4 +1,4 @@
-import { MobileFirstLayout } from "@/src/components/view/MobileFirstLayout";
+import { MobileFirstLayout } from "@/src/components/layout/MobileFirstLayout";
 import { AccordionSlice } from "@/src/components/view/slices/Accordion";
 import { ImageSlice } from "@/src/components/view/slices/Image";
 import { ImageSliderSectionSlice } from "@/src/components/view/slices/ImageSliderSection";

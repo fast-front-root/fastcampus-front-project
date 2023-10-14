@@ -2376,6 +2376,7 @@ __metadata:
   resolution: "@fastcampus/page-builder@workspace:services/page-builder"
   dependencies:
     "@fastcampus/react-components-accordion": "workspace:^"
+    "@fastcampus/react-components-button": "workspace:^"
     "@fastcampus/react-components-layout": "workspace:^"
     "@fastcampus/themes": "workspace:^"
     "@types/node": ^20.8.3
