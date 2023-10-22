@@ -1,8 +1,9 @@
 import { WORKER_BASE_PATH, workerInstance } from ".";
+import { ViewMetadata } from "./type";
 
 type ViewDetailRequestData = {
   value: string;
-  metadata: Object;
+  metadata: ViewMetadata;
 };
 
 const getPutViewDetailPath = (viewId: string) =>
