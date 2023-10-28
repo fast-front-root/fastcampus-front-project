@@ -12,6 +12,7 @@
   "dependencies": {
     "@fastcampus/react-components-accordion": "workspace:^",
     "@fastcampus/react-components-button": "workspace:^",
+    "@fastcampus/react-components-input": "workspace:^",
     "@fastcampus/react-components-layout": "workspace:^",
     "@fastcampus/react-components-toast": "workspace:^",
     "@fastcampus/themes": "workspace:^",

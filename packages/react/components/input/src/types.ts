@@ -23,3 +23,4 @@ export type InputLeftAddonProps = {
   size?: Size;
   children: React.ReactNode;
 };
+

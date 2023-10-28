@@ -1,10 +1,15 @@
+import { InputField } from "@/src/components/Common/Form/Field/InputField";
+import { FormFieldSection } from "@/src/components/Common/Form/Layouts/FormFieldSection";
+import { FormFieldWrapper } from "@/src/components/Common/Form/Layouts/FormFieldWrapper";
 import { DesktopFirstLayout } from "@/src/components/Common/Layouts/DesktopFirstLayout";
 import { DesktopFirstBody } from "@/src/components/Common/Layouts/DesktopFirstLayout/Body";
 import { DesktopFirstNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/Nav";
 import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/SideNav";
 import { Button } from "@fastcampus/react-components-button";
+import { Input } from "@fastcampus/react-components-input";
 import { Box, Flex } from "@fastcampus/react-components-layout";
 import { vars } from "@fastcampus/themes";
+
 
 const EditorNewFormPage: React.FC = () => {
   const handleReset = () => {};
@@ -43,7 +48,9 @@ const EditorNewFormPage: React.FC = () => {
             boxShadow="base"
             style={{ background: vars.colors.$static.light.color.white }}
           >
-            폼 영역
+            <FormFieldSection title="테스트">
+              <InputField isRequired label="테스트" />
+            </FormFieldSection>
           </Box>
         </Flex>
       </DesktopFirstBody>
