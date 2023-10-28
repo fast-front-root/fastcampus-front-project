@@ -1,10 +1,10 @@
 import { putViewDetail } from "@/src/apis/worker/putViewDetail";
-import { JsonEditor } from "@/src/components/Editor/Json";
-import { JsonPresetList } from "@/src/components/EditorNewPage";
-import { DesktopFirstLayout } from "@/src/components/layout/DesktopFirstLayout";
-import { DesktopFirstBody } from "@/src/components/layout/DesktopFirstLayout/Body";
-import { DesktopFirstNav } from "@/src/components/layout/DesktopFirstLayout/Nav";
-import { DesktopFirstSideNav } from "@/src/components/layout/DesktopFirstLayout/SideNav";
+import { JsonEditor } from "@/src/components/Common/Editor/Json";
+import { JsonPresetList } from "@/src/components/Features/EditorNewPage/JsonPresetList";
+import { DesktopFirstLayout } from "@/src/components/Common/Layouts/DesktopFirstLayout";
+import { DesktopFirstBody } from "@/src/components/Common/Layouts/DesktopFirstLayout/Body";
+import { DesktopFirstNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/Nav";
+import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/SideNav";
 import { useViewSchemaValidation } from "@/src/hooks/useViewSchemaValidation";
 import { formatObjectToJson } from "@/src/utils/jsonEditor";
 import { ViewSliceSchemaSnippet } from "@/src/utils/jsonEditor/ViewSchemaSnippet";
@@ -14,7 +14,7 @@ import { useToast } from "@fastcampus/react-components-toast";
 import { useState } from "react";
 import ShortUniqueId from "short-unique-id";
 
-const EditorNewPage: React.FC = () => {
+const EditorNewJsonPage: React.FC = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
   const [viewId] = useState(randomUUID());
 
@@ -125,4 +125,4 @@ const EditorNewPage: React.FC = () => {
   );
 };
 
-export default EditorNewPage;
+export default EditorNewJsonPage;

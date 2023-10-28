@@ -1,5 +1,5 @@
 
-import { MobileFirstLayout } from "../components/layout/MobileFirstLayout";
+import { MobileFirstLayout } from "../components/Common/Layouts/MobileFirstLayout";
 
 const PlaygroundPage = () => {
   return (
