@@ -5,7 +5,7 @@ import { AccordionContentSchema, ImageSchema } from "./object";
 export const MetadataSliceSchema = z.object({
   title: z.string().optional(),
   ogTitle: z.string().optional(),
-  ogDescription: z.string().url().optional(),
+  ogDescription: z.string().optional(),
 });
 
 

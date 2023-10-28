@@ -16,6 +16,7 @@
     "@fastcampus/react-components-layout": "workspace:^",
     "@fastcampus/react-components-toast": "workspace:^",
     "@fastcampus/themes": "workspace:^",
+    "@hookform/resolvers": "^3.3.2",
     "@monaco-editor/react": "^4.6.0",
     "axios": "^1.5.1",
     "dayjs": "^1.11.10",
