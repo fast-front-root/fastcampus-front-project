@@ -1,3 +1,4 @@
+import { putViewDetail } from "@/src/apis/worker/putViewDetail";
 import { InputField } from "@/src/components/Common/Form/Field/InputField";
 import { FormFieldSection } from "@/src/components/Common/Form/Layouts/FormFieldSection";
 import { DesktopFirstLayout } from "@/src/components/Common/Layouts/DesktopFirstLayout";
@@ -5,7 +6,9 @@ import { DesktopFirstBody } from "@/src/components/Common/Layouts/DesktopFirstLa
 import { DesktopFirstNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/Nav";
 import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/SideNav";
 import { Spacing } from "@/src/components/Common/Spacing";
+import { formatObjectToJson } from "@/src/utils/jsonEditor";
 import { ViewSliceSchemaSnippet } from "@/src/utils/jsonEditor/ViewSchemaSnippet";
+import { previewStorage } from "@/src/utils/storage";
 import { getValidateFormErrorMessages } from "@/src/utils/validation/error";
 import { ViewSchemaProps } from "@/src/utils/validation/schema/types";
 import { ViewSchema } from "@/src/utils/validation/schema/view";
@@ -14,9 +17,14 @@ import { Box, Flex } from "@fastcampus/react-components-layout";
 import { useToast } from "@fastcampus/react-components-toast";
 import { vars } from "@fastcampus/themes";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import ShortUniqueId from "short-unique-id";
 
 const EditorNewFormPage: React.FC = () => {
+  const { randomUUID } = new ShortUniqueId({ length: 10 });
+  const [viewId] = useState(randomUUID());
+
   const { toast } = useToast();
 
   const { reset, register, handleSubmit } = useForm<ViewSchemaProps>({
@@ -28,7 +36,9 @@ const EditorNewFormPage: React.FC = () => {
     reset();
   };
   const handlePreview = handleSubmit((formData) => {
-    console.log('preview_success', formData);
+    previewStorage.set(viewId, formatObjectToJson(formData));
+
+    window.open(`/preview/${viewId}`, "_blank");
   }, (formError) => {
     const errors = getValidateFormErrorMessages(formError);
     const firstError = errors[0];
@@ -42,8 +52,36 @@ const EditorNewFormPage: React.FC = () => {
     };
   });
 
-  const handlePublish = handleSubmit((formData) => {
-    console.log('publish', formData);
+  const handlePublish = handleSubmit(async (formData) => {
+    const convertedSlug = formData.slug.split(" ").join("-");
+
+    const currentFormData = {
+      ...formData,
+      slug: `${convertedSlug}-${viewId}`,
+    };
+
+    try {
+      await putViewDetail({
+        viewId,
+        data: {
+          value: formatObjectToJson(currentFormData),
+          metadata: {
+            title: formData.slug,
+            createAt: new Date().toISOString(),
+          },
+        },
+      });
+
+      window.open(`/view/${currentFormData.slug}`, "_blank");
+    } catch (error) {
+      toast({
+        payload: {
+          // @ts-ignore
+          message: `[Fetch Error] ${error.message}`,
+        },
+      });
+    }
+
   }, (formError) => {
     const errors = getValidateFormErrorMessages(formError);
     const firstError = errors[0];
