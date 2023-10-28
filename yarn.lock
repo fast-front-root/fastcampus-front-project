@@ -2392,6 +2392,7 @@ __metadata:
     postcss: ^8
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-hook-form: ^7.47.0
     short-unique-id: ^5.0.3
     swiper: ^10.3.1
     tailwindcss: ^3
@@ -15066,6 +15067,15 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
   checksum: c3907cc4c1d3e9ecc8ca7727058ebcba6ec89848d9e07bfd2c77ee8f28f1ad99bf55e38359dec8a1125de83d41ac09a2874f53c41415edc86ffa9840fa1b7856
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.47.0":
+  version: 7.47.0
+  resolution: "react-hook-form@npm:7.47.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: dec192fec9c54e436f9e47008635dd7849b6b119ed477a9b0cd491367a0b2ced3427cd937febfb245e1cb7578c863917181d903eff4519c2787bf713ec7d3426
   languageName: node
   linkType: hard
 

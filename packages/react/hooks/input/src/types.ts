@@ -5,8 +5,6 @@ export type UseInputProps = {
   isReadOnly?: boolean;
   isRequired?: boolean;
   isInvalid?: boolean;
-  value?: string;
-  onChange?: string;
 } & Omit<ComponentPropsWithoutRef<"input">, "disabled" | "readOnly">;
 
 export type UseInputResult = {
