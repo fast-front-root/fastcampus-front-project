@@ -13,6 +13,7 @@ import { Button } from "@fastcampus/react-components-button";
 import { useToast } from "@fastcampus/react-components-toast";
 import { useState } from "react";
 import ShortUniqueId from "short-unique-id";
+import { Box } from "@fastcampus/react-components-layout";
 
 const EditorNewJsonPage: React.FC = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
@@ -115,11 +116,13 @@ const EditorNewJsonPage: React.FC = () => {
             setSchema={setSchema}
           />
         </DesktopFirstSideNav>
-        <JsonEditor
-          value={schema}
-          onChange={(value) => setSchema(value || "")}
-          onValidate={handleEditorValidation}
-        />
+        <Box className="w-full min-h-screen relative top-0 ml-[280px]">
+          <JsonEditor
+            value={schema}
+            onChange={(value) => setSchema(value || "")}
+            onValidate={handleEditorValidation}
+          />
+        </Box>
       </DesktopFirstBody>
     </DesktopFirstLayout>
   );
