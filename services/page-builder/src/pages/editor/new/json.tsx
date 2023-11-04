@@ -1,6 +1,6 @@
 import { putViewDetail } from "@/src/apis/worker/putViewDetail";
 import { JsonEditor } from "@/src/components/Common/Editor/Json";
-import { JsonPresetList } from "@/src/components/Features/EditorNewPage/JsonPresetList";
+import { JsonPresetList } from "@/src/components/Features/EditorNewJsonPage/JsonPresetList";
 import { DesktopFirstLayout } from "@/src/components/Common/Layouts/DesktopFirstLayout";
 import { DesktopFirstBody } from "@/src/components/Common/Layouts/DesktopFirstLayout/Body";
 import { DesktopFirstNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/Nav";
