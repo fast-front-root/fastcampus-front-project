@@ -9,8 +9,20 @@ const spacingKeys = Object.keys(vars.box.spacing).map(
 const spacingSchema = z.union([...spacingKeys]);
 
 export const commonSliceStyleSchema = z.object({
-  padding: spacingSchema.optional(),
-  paddingX: spacingSchema.optional(),
-  paddingY: spacingSchema.optional(),
+  padding: z.preprocess(
+    (char) =>
+      typeof char === "string" ? parseInt(z.string().parse(char)) : char,
+    spacingSchema.optional(),
+  ),
+  paddingX: z.preprocess(
+    (char) =>
+      typeof char === "string" ? parseInt(z.string().parse(char)) : char,
+    spacingSchema.optional(),
+  ),
+  paddingY: z.preprocess(
+    (char) =>
+      typeof char === "string" ? parseInt(z.string().parse(char)) : char,
+    spacingSchema.optional(),
+  ),
   backgroundColor: z.string().optional(),
 });

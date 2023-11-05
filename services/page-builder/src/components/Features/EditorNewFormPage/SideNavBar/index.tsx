@@ -33,6 +33,18 @@ export const EditorNewFormSideNavBar = () => {
         });
       },
     },
+    {
+      name: "ImageSlice",
+      onClick: () => {
+        append({
+          sliceName: "ImageSlice",
+          data: {
+            imageUrl: "",
+            alt: "",
+          },
+        });
+      },
+    },
   ];
 
   return (
