@@ -45,6 +45,17 @@ export const EditorNewFormSideNavBar = () => {
         });
       },
     },
+    {
+      name: "ImageSliderSlice",
+      onClick: () => {
+        append({
+          sliceName: "ImageSliderSlice",
+          data: {
+            images: [],
+          },
+        });
+      },
+    },
   ];
 
   return (

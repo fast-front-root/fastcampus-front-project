@@ -1,4 +1,3 @@
-import { ImageURLField } from "@/src/components/Common/Form/Field/ImageURLField";
 import { InputField } from "@/src/components/Common/Form/Field/InputField";
 import { SelectField } from "@/src/components/Common/Form/Field/SelectField";
 import { FormFieldSection } from "@/src/components/Common/Form/Layouts/FormFieldSection";
@@ -8,17 +7,18 @@ import { Button } from "@fastcampus/react-components-button";
 import { Divider } from "@fastcampus/react-components-layout";
 import { vars } from "@fastcampus/themes";
 import { useEffect } from "react";
+import { ImagesFields } from "./ImagesFields";
 
 type Props = {
   fieldIndex: number;
 };
 
-export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
+export const ViewSchemaFormSliceImageSliderFields = ({ fieldIndex }: Props) => {
   const { register, setValue } = useViewSchemaFormContext();
   const { remove } = useViewSchemaFormSliceFieldArray();
 
   useEffect(() => {
-    setValue(`slices.${fieldIndex}.sliceName`, "ImageSlice");
+    setValue(`slices.${fieldIndex}.sliceName`, "ImageSliderSlice");
   }, []);
 
   const handleRemove = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -27,15 +27,12 @@ export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
     remove(fieldIndex);
   };
 
-  const handleImageURLChange = (value: string) => {
-    setValue(`slices.${fieldIndex}.data.imageUrl`, value);
-  }
 
   return (
     <FormFieldSection
       title={
         <>
-          {fieldIndex}. Image{" "}
+          {fieldIndex}. ImageSlider{" "}
           <Button
             size="xs"
             variant="outline"
@@ -47,25 +44,12 @@ export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
         </>
       }
     >
-      <ImageURLField
-        label="imageURL"
-        isRequired
-        onChange={handleImageURLChange}
-      />
-      <InputField
-        isRequired
-        label="alt"
-        {...register(`slices.${fieldIndex}.data.alt`)}
-      />
+      <ImagesFields fieldIndex={fieldIndex} />
       <Divider />
-      <InputField
-        label="width"
-        {...register(`slices.${fieldIndex}.data.sliceStyle.width`)}
-      />
       <InputField
         label="backgroundColor"
         type="color"
-        defaultValue={vars.colors.$static.light.gray[50]}
+        defaultValue="transparent"
         {...register(`slices.${fieldIndex}.data.sliceStyle.backgroundColor`)}
       />
       <SelectField
@@ -78,6 +62,18 @@ export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
           </option>
         ))}
       </SelectField>
+      <InputField
+        label="imageItemWidth"
+        type="number"
+        defaultValue={280}
+        {...register(`slices.${fieldIndex}.data.sliceStyle.imageItemWidth`)}
+      />
+      <InputField
+        label="spaceBetween"
+        type="number"
+        defaultValue={16}
+        {...register(`slices.${fieldIndex}.data.sliceStyle.spaceBetween`)}
+      />
     </FormFieldSection>
   );
-};
+}
