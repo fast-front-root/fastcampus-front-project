@@ -14,6 +14,7 @@
     "@fastcampus/react-components-button": "workspace:^",
     "@fastcampus/react-components-input": "workspace:^",
     "@fastcampus/react-components-layout": "workspace:^",
+    "@fastcampus/react-components-select": "workspace:^",
     "@fastcampus/react-components-toast": "workspace:^",
     "@fastcampus/themes": "workspace:^",
     "@hookform/resolvers": "^3.3.2",
