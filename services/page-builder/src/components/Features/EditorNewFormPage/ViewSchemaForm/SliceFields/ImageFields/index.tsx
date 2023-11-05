@@ -1,3 +1,4 @@
+import { ImageURLField } from "@/src/components/Common/Form/Field/ImageURLField";
 import { InputField } from "@/src/components/Common/Form/Field/InputField";
 import { SelectField } from "@/src/components/Common/Form/Field/SelectField";
 import { FormFieldSection } from "@/src/components/Common/Form/Layouts/FormFieldSection";
@@ -42,11 +43,12 @@ export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
         </>
       }
     >
-      <InputField
+      <ImageURLField label="imageURL" isRequired />
+      {/* <InputField
         label="imageURL"
         isRequired
         {...register(`slices.${fieldIndex}.data.imageUrl`)}
-      />
+      /> */}
       <InputField
         isRequired
         label="alt"
