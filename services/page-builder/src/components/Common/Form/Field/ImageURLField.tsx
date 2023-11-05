@@ -2,7 +2,7 @@ import { Box } from "@fastcampus/react-components-layout";
 import { ImageURLInput, ImageURLInputProps } from "../Input/ImageURL";
 import { FormFieldWrapper, FormFieldWrapperProps } from "../Layouts/FormFieldWrapper";
 
-type Props = ImageURLInputProps & FormFieldWrapperProps;
+type Props = ImageURLInputProps & Omit<FormFieldWrapperProps, 'onChange'>;
 
 export const ImageURLField = (props: Props) => {
   const { label, isRequired, ...inputRest } = props;

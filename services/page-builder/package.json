@@ -10,6 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.441.0",
+    "@aws-sdk/s3-request-presigner": "^3.441.0",
     "@fastcampus/react-components-accordion": "workspace:^",
     "@fastcampus/react-components-button": "workspace:^",
     "@fastcampus/react-components-input": "workspace:^",

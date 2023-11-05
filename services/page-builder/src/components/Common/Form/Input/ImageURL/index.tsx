@@ -1,5 +1,7 @@
+import { putImageFile } from "@/src/apis/r2/putImageFile";
 import { Text, Flex } from "@fastcampus/react-components-layout";
 import { useState } from "react";
+import ShortUniqueId from "short-unique-id";
 
 export type ImageURLInputProps = {
   defaultValue?: string; // 이미 업로드 된 것이 있다면 url을 넘겨 받을 수 있게
@@ -14,13 +16,26 @@ export const ImageURLInput = ({
 }: ImageURLInputProps) => {
   const [imageURL, setImageURL] = useState(defaultValue);
 
-  const handleInputFileChange = (
+  const handleInputFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = event.target.files?.[0];
 
     if (file && file.type.match("image.*")) {
-      console.log(file); // R2 버킷에 업로드를!! 성공. response에 받은 URL을 onChange에 전달해준다.
+      try {
+        const { randomUUID } = new ShortUniqueId({ length: 20 });
+        const fileName = randomUUID();
+
+        const imageURL = await putImageFile({
+          fileName,
+          file,
+        });
+
+        setImageURL(imageURL);
+        onChange?.(imageURL);
+      } catch {
+        console.error("이미지 업로드 실패");
+      }
     }
   };
 
@@ -45,7 +60,7 @@ export const ImageURLInput = ({
         }}
       >
         {imageURL ? (
-          ""
+          <img src={imageURL} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         ) : (
           <Text color="gray" fontSize="sm">
             {placeholder}

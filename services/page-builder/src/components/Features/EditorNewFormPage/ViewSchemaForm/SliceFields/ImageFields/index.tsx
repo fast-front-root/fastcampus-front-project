@@ -27,6 +27,10 @@ export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
     remove(fieldIndex);
   };
 
+  const handleImageURLChange = (value: string) => {
+    setValue(`slices.${fieldIndex}.data.imageUrl`, value);
+  }
+
   return (
     <FormFieldSection
       title={
@@ -43,12 +47,11 @@ export const ViewSchemaFormSliceImageFields = ({ fieldIndex }: Props) => {
         </>
       }
     >
-      <ImageURLField label="imageURL" isRequired />
-      {/* <InputField
+      <ImageURLField
         label="imageURL"
         isRequired
-        {...register(`slices.${fieldIndex}.data.imageUrl`)}
-      /> */}
+        onChange={handleImageURLChange}
+      />
       <InputField
         isRequired
         label="alt"
