@@ -15,11 +15,30 @@ const AccordionPanel = (props: AccordionPanelProps, ref: React.Ref<HTMLDivElemen
 
   const [currentPanelHeight, setCurrentPanelHeight] = useState<string>();
   useEffect(() => {
+    const handleResize = () => {
+      if (!innerRef.current) return;
+
+      setCurrentPanelHeight(`${innerRef.current.clientHeight}px`);
+    }
+
     if (!innerRef.current) return;
 
-    setCurrentPanelHeight(
-      isActive ? `${innerRef.current.clientHeight}px` : "0",
-    );
+    if (isActive) {
+      handleResize();
+
+      const observer = new MutationObserver(handleResize);
+      observer.observe(innerRef.current, {
+        childList: true,
+        subtree: true,
+      });
+
+      return () => {
+        observer.disconnect();
+      }
+    } else {
+      setCurrentPanelHeight("0");
+    }
+
   }, [isActive, activeItems]);
 
   return (
