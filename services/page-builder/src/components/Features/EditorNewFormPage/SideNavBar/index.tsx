@@ -56,6 +56,17 @@ export const EditorNewFormSideNavBar = () => {
         });
       },
     },
+    {
+      name: "AccordionSlice",
+      onClick: () => {
+        append({
+          sliceName: "AccordionSlice",
+          data: {
+            accordionContents: [],
+          },
+        });
+      },
+    },
   ];
 
   return (
