@@ -16,7 +16,9 @@ export const useViewSchemaSlices = (viewSchema: ViewSchemaProps) => {
       sliceList.push(<MetadataSlice {...viewSchema.metadata} />);
     }
 
-    viewSchema.slices.forEach(({ sliceName, data }) => {
+    viewSchema.slices.forEach(({ sliceName, hideSlice, data }) => {
+      if (hideSlice) return;
+
       switch (sliceName) {
         case "TextSlice": {
           sliceList.push(<TextSlice {...data} />);
