@@ -46,6 +46,7 @@ export const ViewList = ({ viewList }: Props) => {
         value: formatObjectToJson(value),
         metadata: {
           ...metadata,
+          updatedAt: new Date().toISOString(),
           isDraft: !isDraft,
         }
       }
@@ -82,7 +83,7 @@ export const ViewList = ({ viewList }: Props) => {
       <ul>
         {sortedLastedDateViewList.map(({ name: viewId, metadata }) => (
           <a
-            href={metadata.isDraft ? `/preview/${viewId}` :`/view/${viewId}`}
+            href={metadata.isDraft ? `/preview/${viewId}` : `/view/${viewId}`}
             target="_blank"
             key={viewId}
             rel="noreferrer"
@@ -99,7 +100,9 @@ export const ViewList = ({ viewList }: Props) => {
                   fontSize="xs"
                   style={{ color: vars.colors.$static.light.gray[500] }}
                 >
-                  {formatDate(metadata.createAt)}
+                  {metadata.updatedAt && `수정일자: ${formatDate(metadata.updatedAt)} | `}
+                  {`생성일자: ${formatDate(metadata.createAt)}`}
+                  
                 </Text>
               </div>
               <div className="min-w-fit flex items-center gap-4">

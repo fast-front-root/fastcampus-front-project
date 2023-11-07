@@ -68,6 +68,7 @@ const EditorNewJsonPage: React.FC = () => {
               metadata: {
                 title: objectifiedSchema.slug,
                 isDraft: false,
+                updatedAt: new Date().toISOString(),
                 createAt: new Date().toISOString(),
               },
             },
