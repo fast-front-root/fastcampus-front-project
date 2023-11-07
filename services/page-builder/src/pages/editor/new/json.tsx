@@ -53,6 +53,8 @@ const EditorNewJsonPage: React.FC = () => {
     validateViewSchema({
       viewSchema: schema,
       onSuccess: async () => {
+        previewStorage.set(viewId, schema);
+
         const objectifiedSchema = JSON.parse(schema);
         const convertedSlug = objectifiedSchema.slug.split(" ").join("-");
 
@@ -65,6 +67,7 @@ const EditorNewJsonPage: React.FC = () => {
               value: schema,
               metadata: {
                 title: objectifiedSchema.slug,
+                isDraft: false,
                 createAt: new Date().toISOString(),
               },
             },
