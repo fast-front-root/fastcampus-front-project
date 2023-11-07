@@ -2,12 +2,11 @@ import { InputField } from "@/src/components/Common/Form/Field/InputField";
 import { SelectField } from "@/src/components/Common/Form/Field/SelectField";
 import { FormFieldSection } from "@/src/components/Common/Form/Layouts/FormFieldSection";
 import { useViewSchemaFormContext } from "@/src/hooks/useViewSchemaForm";
-import { useViewSchemaFormSliceFieldArray } from "@/src/hooks/useViewSchemaFormSliceFieldArray";
-import { Button } from "@fastcampus/react-components-button";
 import { Divider } from "@fastcampus/react-components-layout";
 import { vars } from "@fastcampus/themes";
 import { useEffect } from "react";
 import { AccordionContentsFields } from "./AccordionContentsFields";
+import { SliceFieldTitleNavBar } from "../Common/SliceFieldTitleNavBar";
 
 type Props = {
   fieldIndex: number;
@@ -15,34 +14,18 @@ type Props = {
 
 export const ViewSchemaFormSliceAccordionFields = ({ fieldIndex }: Props) => {
     const { register, setValue } = useViewSchemaFormContext();
-    const { remove } = useViewSchemaFormSliceFieldArray();
 
     useEffect(() => {
       setValue(`slices.${fieldIndex}.sliceName`, "AccordionSlice");
     });
 
-    const handleRemove = (
-      event: React.MouseEvent<HTMLSpanElement, MouseEvent>,
-    ) => {
-      event.stopPropagation();
-
-      remove(fieldIndex);
-    };
-
     return (
       <FormFieldSection
         title={
-          <>
-            {fieldIndex}. Accordion{" "}
-            <Button
-              size="xs"
-              variant="outline"
-              color="red"
-              onClick={handleRemove}
-            >
-              삭제
-            </Button>
-          </>
+          <SliceFieldTitleNavBar
+            title={`${fieldIndex}. ImageSlider`}
+            fieldIndex={fieldIndex}
+          />
         }
       >
         <SelectField
