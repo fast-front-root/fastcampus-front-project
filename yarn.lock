@@ -3358,6 +3358,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@fastcampus/youtube@workspace:services/youtube":
+  version: 0.0.0-use.local
+  resolution: "@fastcampus/youtube@workspace:services/youtube"
+  dependencies:
+    "@fastcampus/themes": "workspace:^"
+    "@types/node": ^20.8.3
+    "@types/react": ^18.2.25
+    "@types/react-dom": ^18.2.11
+    "@vanilla-extract/css": ^1.13.0
+    "@vanilla-extract/dynamic": ^2.0.3
+    "@vanilla-extract/next-plugin": ^2.3.2
+    "@vanilla-extract/recipes": ^0.5.0
+    next: 13.5.4
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.2.2
+  languageName: unknown
+  linkType: soft
+
 "@floating-ui/core@npm:^1.4.1":
   version: 1.4.1
   resolution: "@floating-ui/core@npm:1.4.1"
@@ -7308,6 +7327,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vanilla-extract/css@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "@vanilla-extract/css@npm:1.14.0"
+  dependencies:
+    "@emotion/hash": ^0.9.0
+    "@vanilla-extract/private": ^1.0.3
+    chalk: ^4.1.1
+    css-what: ^6.1.0
+    cssesc: ^3.0.0
+    csstype: ^3.0.7
+    deep-object-diff: ^1.1.9
+    deepmerge: ^4.2.2
+    media-query-parser: ^2.0.2
+    modern-ahocorasick: ^1.0.0
+    outdent: ^0.8.0
+  checksum: ca12de26f72b908c7ac2ee9319faff885fb451ab3da7cef86aae8660c7e042c447041be40ac8c6155d87e8a709efb0697214db3a6cce211e8ef3c110d4dcf8a1
+  languageName: node
+  linkType: hard
+
 "@vanilla-extract/dynamic@npm:^2.0.3":
   version: 2.0.3
   resolution: "@vanilla-extract/dynamic@npm:2.0.3"
@@ -7323,6 +7361,27 @@ __metadata:
   dependencies:
     "@vanilla-extract/integration": ^6.2.0
   checksum: 14d28da1f052d7c58301af77d364375598dbde12905e995688f1e41fdabd04acf8172f6ea76ed80b1f4b7cec6de22184015cd0e40f7ef1227b113929043f7b42
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/integration@npm:^6.0.0":
+  version: 6.2.3
+  resolution: "@vanilla-extract/integration@npm:6.2.3"
+  dependencies:
+    "@babel/core": ^7.20.7
+    "@babel/plugin-syntax-typescript": ^7.20.0
+    "@vanilla-extract/babel-plugin-debug-ids": ^1.0.2
+    "@vanilla-extract/css": ^1.14.0
+    esbuild: 0.17.6
+    eval: 0.1.8
+    find-up: ^5.0.0
+    javascript-stringify: ^2.0.1
+    lodash: ^4.17.21
+    mlly: ^1.1.0
+    outdent: ^0.8.0
+    vite: ^4.1.4
+    vite-node: ^0.28.5
+  checksum: 2f5dec52423052d991cb2ec2295514306a3121c7ff153614216351711281a3f9ea82ab03a23bde2256caf9220c6b764ffe7ec986eaf1d432cc6212217a17b3a0
   languageName: node
   linkType: hard
 
@@ -7344,6 +7403,17 @@ __metadata:
     vite: ^4.1.4
     vite-node: ^0.28.5
   checksum: dbff14a91957c47d3ef347d1578588685a9d6408a0cb33e9121df59e9c10482844cf60663fd9d3608a61a3e9578ccd5a303b33c61c238e7e89023197f3950c56
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/next-plugin@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "@vanilla-extract/next-plugin@npm:2.3.2"
+  dependencies:
+    "@vanilla-extract/webpack-plugin": ^2.3.1
+  peerDependencies:
+    next: ">=12.1.7"
+  checksum: 3f6f0232825bb55b1567f9d1ddf4b242d593ec958e4662da052efd928b9da0fbf5e8f53ff2cf2ef99bad00128c53631da961c1a06fb14c573260d3f4266d3a43
   languageName: node
   linkType: hard
 
@@ -7369,6 +7439,20 @@ __metadata:
   peerDependencies:
     "@vanilla-extract/css": ^1.0.0
   checksum: 13c53a94b19f9226c2684b0da06b98022d2faaf504cb5a4a8e5a0abae499aaa7855c17aa6d88534800d9427696b3248f4fc1a5332bde336c445d837017569f3b
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/webpack-plugin@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "@vanilla-extract/webpack-plugin@npm:2.3.1"
+  dependencies:
+    "@vanilla-extract/integration": ^6.0.0
+    chalk: ^4.1.1
+    debug: ^4.3.1
+    loader-utils: ^2.0.0
+  peerDependencies:
+    webpack: ^4.30.0 || ^5.20.2
+  checksum: f0d836aa4c6755c1c202b22f0844fd4f52bc36a57524db75341240c6330eff6bc8cdc60edd6bac2a0a074eacaaf311ca2b8466c87355c4549726500e08a2938d
   languageName: node
   linkType: hard
 
@@ -8190,6 +8274,13 @@ __metadata:
   version: 1.6.51
   resolution: "big-integer@npm:1.6.51"
   checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
+  languageName: node
+  linkType: hard
+
+"big.js@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "big.js@npm:5.2.2"
+  checksum: b89b6e8419b097a8fb4ed2399a1931a68c612bce3cfd5ca8c214b2d017531191070f990598de2fc6f3f993d91c0f08aa82697717f6b3b8732c9731866d233c9e
   languageName: node
   linkType: hard
 
@@ -9435,7 +9526,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -9835,6 +9926,13 @@ __metadata:
   version: 9.2.2
   resolution: "emoji-regex@npm:9.2.2"
   checksum: 8487182da74aabd810ac6d6f1994111dfc0e331b01271ae01ec1eb0ad7b5ecc2bbbbd2f053c05cb55a1ac30449527d819bbfbf0e3de1023db308cbcb47f86601
+  languageName: node
+  linkType: hard
+
+"emojis-list@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "emojis-list@npm:3.0.0"
+  checksum: ddaaa02542e1e9436c03970eeed445f4ed29a5337dfba0fe0c38dfdd2af5da2429c2a0821304e8a8d1cadf27fdd5b22ff793571fa803ae16852a6975c65e8e70
   languageName: node
   linkType: hard
 
@@ -13019,7 +13117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.2.2, json5@npm:^2.2.3":
+"json5@npm:^2.1.2, json5@npm:^2.2.2, json5@npm:^2.2.3":
   version: 2.2.3
   resolution: "json5@npm:2.2.3"
   bin:
@@ -13194,6 +13292,17 @@ __metadata:
   version: 2.0.3
   resolution: "lines-and-columns@npm:2.0.3"
   checksum: 5955363dfd7d3d7c476d002eb47944dbe0310d57959e2112dce004c0dc76cecfd479cf8c098fd479ff344acdf04ee0e82b455462a26492231ac152f6c48d17a1
+  languageName: node
+  linkType: hard
+
+"loader-utils@npm:^2.0.0":
+  version: 2.0.4
+  resolution: "loader-utils@npm:2.0.4"
+  dependencies:
+    big.js: ^5.2.2
+    emojis-list: ^3.0.0
+    json5: ^2.1.2
+  checksum: a5281f5fff1eaa310ad5e1164095689443630f3411e927f95031ab4fb83b4a98f388185bb1fe949e8ab8d4247004336a625e9255c22122b815bb9a4c5d8fc3b7
   languageName: node
   linkType: hard
 
@@ -14797,6 +14906,13 @@ __metadata:
     pkg-types: ^1.0.3
     ufo: ^1.3.0
   checksum: ad0813eca133e59ac03b356b87deea57da96083dce7dda58a8eeb2dce92b7cc2315bedd9268f3ff8e98effe1867ddb1307486d4c5cd8be162daa8e0fa0a98ed4
+  languageName: node
+  linkType: hard
+
+"modern-ahocorasick@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "modern-ahocorasick@npm:1.0.0"
+  checksum: 3d06a5e89f3723439c66cd4252ac4fc98dc70980e614e6a2e59a18adcab6188924887c88054d3acf4f88850ba3f87332d5c9cc5639826799eaaf87f3633b3585
   languageName: node
   linkType: hard
 
