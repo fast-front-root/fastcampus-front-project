@@ -1,25 +1,22 @@
 'use client';
 
-import { vars } from "@fastcampus/themes";
+import * as s from './index.css';
 import { useGetVideosPopularList } from "../../hooks/useGetVideosPopularList";
-import { useEffect } from "react";
 
 export const VideosPopularList = () => {
-  const { data, fetchNextPage, isFetchingNextPage } = useGetVideosPopularList({});
+  const { data } = useGetVideosPopularList({});
 
-  useEffect(() => {
-    setTimeout(() => {
-      fetchNextPage();
-    }, 2000);
-  }, []);
+  const flatData = data.pages.map((page) => page?.lists ?? []).flat();
 
   return (
-    <section style={{ color: vars.colors.$scale.gray[900] }}>
-      <h2>목록</h2>
-      <br />
-      <p>fetching: {isFetchingNextPage ? 'true' : 'false'}</p>
-      <br />
-      <p>{data.pages?.[0].lists?.[0].title}</p>
+    <section className={s.wrapper}>
+      {
+        flatData.map((item) => (
+          <div key={item.videoId} className={s.item}>
+            <div className={s.itemWrapper} />
+          </div>
+        ))
+      }
     </section>
   );
 };
