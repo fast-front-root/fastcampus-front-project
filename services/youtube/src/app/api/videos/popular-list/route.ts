@@ -56,6 +56,8 @@ const mappingResponse = (
         channelTitle: snippet?.channelTitle ?? "",
         thumbnail: {
           url: snippet?.thumbnails?.medium?.url ?? "",
+          width: snippet?.thumbnails?.medium?.width ?? undefined,
+          height: snippet?.thumbnails?.medium?.height ?? undefined,
         },
         publishedAt,
         publishedAtDisplayText:
