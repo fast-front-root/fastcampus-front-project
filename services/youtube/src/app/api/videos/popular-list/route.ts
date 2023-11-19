@@ -1,4 +1,7 @@
-import { GetVideosPopularListRequestParams, GetVideosPopularListResponse } from "@/src/features/main/api/getVideosPupularList";
+import {
+  GetVideosPopularListRequestParams,
+  GetVideosPopularListResponse,
+} from "@/src/features/main/api/getVideosPupularList";
 import { youtubeServerInstance } from "@/src/shared/api/youtube/server/instance";
 import { formatKoreanTextCompareDatesFromNow } from "@/src/shared/utils/format/date";
 import { formatNumberToKoreanText } from "@/src/shared/utils/format/number";
@@ -26,7 +29,7 @@ export const GET = async (request: NextRequest) => {
       status: 500,
     });
   }
-}
+};
 
 const parseQueryParams = (
   params: URLSearchParams,
@@ -34,34 +37,38 @@ const parseQueryParams = (
   return {
     maxResults: Number(params.get("maxResults") ?? "10"),
     pageToken: params.get("pageToken") ?? undefined,
-  }
+  };
 };
 
-const mappingResponse = (data: youtube_v3.Schema$VideoListResponse): GetVideosPopularListResponse => {
-  const lists = data?.items?.map(({ id, snippet, statistics }) => {
-    const publishedAt = snippet?.publishedAt ?? "";
-    const parsedViewCount = parseInt(statistics?.viewCount ?? "0");
+const mappingResponse = (
+  data: youtube_v3.Schema$VideoListResponse,
+): GetVideosPopularListResponse => {
+  const lists =
+    data?.items?.map(({ id, snippet, statistics }) => {
+      const publishedAt = snippet?.publishedAt ?? "";
+      const parsedViewCount = parseInt(statistics?.viewCount ?? "0");
 
-    return {
-      videoId: id ?? "",
-      title: snippet?.title ?? "",
-      description: snippet?.description ?? "",
-      channelId: snippet?.channelId ?? "",
-      channelTitle: snippet?.channelTitle ?? "",
-      thumbnail: {
-        url: snippet?.thumbnails?.medium?.url ?? "",
-      },
-      publishedAt,
-      publishedAtDisplayText: formatKoreanTextCompareDatesFromNow(publishedAt),
-      viewCount: parsedViewCount,
-      viewCountDisplayText: formatNumberToKoreanText(parsedViewCount, true),
-    };
-  }) ?? [];
+      return {
+        videoId: id ?? "",
+        title: snippet?.title ?? "",
+        description: snippet?.description ?? "",
+        channelId: snippet?.channelId ?? "",
+        channelTitle: snippet?.channelTitle ?? "",
+        thumbnail: {
+          url: snippet?.thumbnails?.medium?.url ?? "",
+        },
+        publishedAt,
+        publishedAtDisplayText:
+          formatKoreanTextCompareDatesFromNow(publishedAt),
+        viewCount: parsedViewCount,
+        viewCountDisplayText: formatNumberToKoreanText(parsedViewCount, true),
+      };
+    }) ?? [];
 
-  return ({
+  return {
     lists,
     prevPageToken: data.prevPageToken ?? undefined,
     nextPageToken: data.nextPageToken ?? undefined,
     totalResults: data.pageInfo?.totalResults ?? 0,
-  })
-}
+  };
+};
