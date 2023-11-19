@@ -1,6 +1,7 @@
 import '@/src/shared/styles';
 import type { Metadata } from 'next'
 import { ThemeScript } from '@/src/shared/components/ThemeScript';
+import { QueryProvider } from "@/src/shared/components/QueryProvider";
 
 export const metadata: Metadata = {
   title: "YouTube",
@@ -17,8 +18,8 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <ThemeScript />
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
-  )
+  );
 }
