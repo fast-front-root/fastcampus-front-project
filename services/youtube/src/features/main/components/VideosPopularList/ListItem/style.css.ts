@@ -18,7 +18,9 @@ export const link = style([
   },
 ]);
 
-export const thumbnailWrapper = style([f.pRelative, f.wFull, f.hFull]);
+export const thumbnailWrapper = style([f.pRelative, f.wFull, {
+  aspectRatio: "16 / 9",
+}]);
 
 export const image = style([
   f.wFull,

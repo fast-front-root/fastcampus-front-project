@@ -1,3 +1,5 @@
+"use client";
+
 import { UseIntersectionObserverProps, useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { Spinner } from "../base/Spinner";
 import * as s from "./style.css";
