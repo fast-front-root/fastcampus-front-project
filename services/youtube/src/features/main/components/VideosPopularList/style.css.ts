@@ -1,5 +1,5 @@
 import { f } from "@/src/shared/styles/functions";
-import { gridResponsiveStyle } from "@/src/shared/styles/functions/layout.css";
+import { responsiveStyle } from "@/src/shared/styles/functions/layout.css";
 import { style } from "@vanilla-extract/css";
 
 export const wrapper = style([
@@ -9,7 +9,7 @@ export const wrapper = style([
     padding: "1.5rem 2rem",
     gridAutoRows: "minmax(auto)",
   },
-  gridResponsiveStyle({
+  responsiveStyle({
     twoXl: {
       gridTemplateColumns: "repeat(5, 1fr)",
     },
