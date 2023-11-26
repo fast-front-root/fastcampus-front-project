@@ -5,6 +5,7 @@
   "packageManager": "yarn@3.6.3",
   "scripts": {
     "dev": "next dev",
+    "dev:mocking": "NEXT_PUBLIC_MOCKING=true next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -29,6 +30,7 @@
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
     "@vanilla-extract/next-plugin": "^2.3.2",
+    "msw": "^2.0.9",
     "typescript": "^5.2.2"
   }
 }
