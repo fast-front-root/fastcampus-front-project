@@ -32,5 +32,8 @@
     "@vanilla-extract/next-plugin": "^2.3.2",
     "msw": "^2.0.9",
     "typescript": "^5.2.2"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
