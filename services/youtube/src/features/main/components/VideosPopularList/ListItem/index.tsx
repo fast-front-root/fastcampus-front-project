@@ -1,5 +1,6 @@
 import * as s from './style.css';
 import { PopularListItem } from "@/src/features/main/api/getVideosPopularList";
+import { getVideoDetailPageLink } from '@/src/shared/utils/link/page';
 import Link from "next/link";
 import { useState } from 'react';
 
@@ -23,7 +24,7 @@ export const VideosPopularListItem = ({ video }: Props) => {
   return (
     <div className={s.wrapper}>
       <Link
-        href="/"
+        href={getVideoDetailPageLink({ videoId })}
         className={s.link}
         onPointerEnter={() => {
           setActiveVideo(true);

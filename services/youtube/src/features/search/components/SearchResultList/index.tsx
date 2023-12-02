@@ -6,6 +6,7 @@ import * as s from "./style.css";
 import { SearchOrder } from "../../api/getSearchVideosList";
 import { SearchResultListItem } from "./ListItem";
 import { VisibilityLoader } from "@/src/shared/components/VisibilityLoader";
+import { flattenInfinityListData } from "@/src/shared/utils/data";
 
 export const SearchResultList = () => {
   const searchParams = useSearchParams();
@@ -17,7 +18,7 @@ export const SearchResultList = () => {
 
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage } = useGetSearchVideosList(searchQuery);
 
-  const flatData = data.pages.map((page) => page?.lists ?? []).flat();
+  const flatData = flattenInfinityListData(data);
 
   return (
     <>

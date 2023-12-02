@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { SearchVideosListItem } from "@/src/features/search/api/getSearchVideosList";
 import * as s from './style.css';
+import { getVideoDetailPageLink } from "@/src/shared/utils/link/page";
 
 type Props = {
   video: SearchVideosListItem;
 }
 
 export const SearchResultListItem = ({ video }: Props) => {
-  const { thumbnail, title, channelTitle, publishedAtDisplayText, description } = video;
+  const { videoId, thumbnail, title, channelTitle, publishedAtDisplayText, description } = video;
 
   return (
-    <Link href="/" className={s.link}>
+    <Link href={getVideoDetailPageLink({ videoId })} className={s.link}>
       <div className={s.wrapper}>
         <div className={s.thumbnailWrapper}>
           <img

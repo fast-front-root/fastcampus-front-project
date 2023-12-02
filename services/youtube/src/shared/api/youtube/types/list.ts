@@ -16,3 +16,7 @@ export type VideoListItem = {
   publishedAt: string;
   publishedAtDisplayText: string; // 1개월 전
 };
+
+export type ListResponse<T> = {
+  lists: T[];
+} & ListPageApiInfo;

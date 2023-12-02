@@ -1,5 +1,5 @@
 import { API_BASE_URL } from "@/src/shared/api/constants";
-import { ListPageApiInfo, VideoListItem } from "@/src/shared/api/youtube/types/list";
+import { ListResponse, VideoListItem } from "@/src/shared/api/youtube/types/list";
 import { youtube_v3 } from "googleapis";
 import queryString from "query-string";
 
@@ -14,9 +14,7 @@ export type GetSearchVideosListRequestParams = Pick<
 
 export type SearchVideosListItem = VideoListItem;
 
-export type GetSearchVideosListResponse = {
-  lists: SearchVideosListItem[];
-} & ListPageApiInfo;
+export type GetSearchVideosListResponse = ListResponse<SearchVideosListItem>;
 
 export const getSearchVideosListURL = `${API_BASE_URL}/api/videos/search`;
 

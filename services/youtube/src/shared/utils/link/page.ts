@@ -10,3 +10,14 @@ export const getSearchPageLink = (params: SearchPageQueryParams) => {
 
   return `/search?${queryString.stringify(parsedParams)}`;
 };
+
+export const getMainPageLink = () => {
+  return '/';
+}
+
+type VideoDetailPageParams = {
+  videoId: string;
+}
+export const getVideoDetailPageLink = (params: VideoDetailPageParams) => {
+  return '/';
+};
