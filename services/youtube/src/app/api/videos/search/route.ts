@@ -1,10 +1,6 @@
-import {
-  GetVideosPopularListRequestParams,
-  GetVideosPopularListResponse,
-} from "@/src/features/main/api/getVideosPopularList";
+import { GetSearchVideosListRequestParams, GetSearchVideosListResponse, SearchOrder } from "@/src/features/search/api/getSearchVideosList";
 import { youtubeServerInstance } from "@/src/shared/api/youtube/server/instance";
 import { formatKoreanTextCompareDatesFromNow } from "@/src/shared/utils/format/date";
-import { formatNumberToKoreanText } from "@/src/shared/utils/format/number";
 import { youtube_v3 } from "googleapis";
 import { NextRequest } from "next/server";
 
@@ -13,10 +9,11 @@ export const GET = async (request: NextRequest) => {
     // Params Validation 생략
     const queryParams = parseQueryParams(request.nextUrl.searchParams);
 
-    const { data } = await youtubeServerInstance.videos.list({
-      part: ["snippet", "statistics"],
-      chart: "mostPopular",
+    const { data } = await youtubeServerInstance.search.list({
+      part: ["snippet"],
+      type: ["video"],
       regionCode: "KR",
+      maxResults: 20,
       ...queryParams,
     });
 
@@ -33,23 +30,23 @@ export const GET = async (request: NextRequest) => {
 
 const parseQueryParams = (
   params: URLSearchParams,
-): GetVideosPopularListRequestParams => {
+): GetSearchVideosListRequestParams => {
   return {
-    maxResults: Number(params.get("maxResults") ?? "10"),
+    q: params.get("q") ?? "",
+    order: (params.get("order") ?? "relevance") as SearchOrder,
     pageToken: params.get("pageToken") ?? undefined,
   };
 };
 
 const mappingResponse = (
-  data: youtube_v3.Schema$VideoListResponse,
-): GetVideosPopularListResponse => {
+  data: youtube_v3.Schema$SearchListResponse,
+): GetSearchVideosListResponse => {
   const lists =
-    data?.items?.map(({ id, snippet, statistics }) => {
+    data?.items?.map(({ id, snippet }) => {
       const publishedAt = snippet?.publishedAt ?? "";
-      const parsedViewCount = parseInt(statistics?.viewCount ?? "0");
 
       return {
-        videoId: id ?? "",
+        videoId: id?.videoId ?? "",
         title: snippet?.title ?? "",
         description: snippet?.description ?? "",
         channelId: snippet?.channelId ?? "",
@@ -62,8 +59,6 @@ const mappingResponse = (
         publishedAt,
         publishedAtDisplayText:
           formatKoreanTextCompareDatesFromNow(publishedAt),
-        viewCount: parsedViewCount,
-        viewCountDisplayText: formatNumberToKoreanText(parsedViewCount, true),
       };
     }) ?? [];
 
@@ -74,3 +69,4 @@ const mappingResponse = (
     totalResults: data.pageInfo?.totalResults ?? 0,
   };
 };
+
