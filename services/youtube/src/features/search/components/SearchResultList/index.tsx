@@ -5,6 +5,7 @@ import { useGetSearchVideosList } from "../../hooks/useGetSearchVideosList";
 import * as s from "./style.css";
 import { SearchOrder } from "../../api/getSearchVideosList";
 import { SearchResultListItem } from "./ListItem";
+import { VisibilityLoader } from "@/src/shared/components/VisibilityLoader";
 
 export const SearchResultList = () => {
   const searchParams = useSearchParams();
@@ -14,17 +15,26 @@ export const SearchResultList = () => {
     order: (searchParams.get("order") ?? "relevance") as SearchOrder,
   };
 
-  const { data } = useGetSearchVideosList(searchQuery);
+  const { data, hasNextPage, fetchNextPage, isFetchingNextPage } = useGetSearchVideosList(searchQuery);
 
   const flatData = data.pages.map((page) => page?.lists ?? []).flat();
 
   return (
-    <section className={s.container}>
-      <div className={s.wrapper}>
-        {flatData.map((data) => (
-          <SearchResultListItem key={data?.videoId} video={data} />
-        ))}
-      </div>
-    </section>
+    <>
+      <section className={s.container}>
+        <div className={s.wrapper}>
+          {flatData.map((data) => (
+            <SearchResultListItem key={data?.videoId} video={data} />
+          ))}
+        </div>
+      </section>
+      {hasNextPage && (
+        <VisibilityLoader
+          callback={() => {
+            !isFetchingNextPage && fetchNextPage();
+          }}
+        />
+      )}
+    </>
   );
 };
