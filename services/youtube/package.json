@@ -40,6 +40,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "happy-dom": "^12.10.3",
     "msw": "^2.0.9",
+    "next-router-mock": "^0.9.10",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },
