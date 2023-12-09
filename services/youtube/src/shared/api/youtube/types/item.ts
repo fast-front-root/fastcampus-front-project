@@ -11,6 +11,8 @@ export type VideoStatistics = {
   likeCountDisplayText: string;
   dislikeCount: number;
   dislikeCountDisplayText: string;
+  commentCount: number;
+  commentCountDisplayText: string;
 };
 
 export type Channel = {
