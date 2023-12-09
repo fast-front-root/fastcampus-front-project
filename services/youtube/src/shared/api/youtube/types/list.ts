@@ -1,4 +1,4 @@
-import { VideoThumbnail } from "./item";
+import { Thumbnail } from "./item";
 
 export type ListPageApiInfo = {
   nextPageToken?: string,
@@ -12,7 +12,7 @@ export type VideoListItem = {
   description: string;
   channelId: string;
   channelTitle: string;
-  thumbnail: VideoThumbnail;
+  thumbnail: Thumbnail;
   publishedAt: string;
   publishedAtDisplayText: string; // 1개월 전
 };
