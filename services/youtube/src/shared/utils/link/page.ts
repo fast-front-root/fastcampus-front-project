@@ -1,4 +1,5 @@
 import { GetSearchVideosListRequestParams } from "@/src/features/search/api/getSearchVideosList";
+import { VideoDetailPageParams } from "@/src/features/videos/detail/types";
 import queryString from "query-string";
 
 type SearchPageQueryParams = Pick<GetSearchVideosListRequestParams, 'order' | 'q'>;
@@ -15,9 +16,6 @@ export const getMainPageLink = () => {
   return '/';
 }
 
-type VideoDetailPageParams = {
-  videoId: string;
-}
-export const getVideoDetailPageLink = (params: VideoDetailPageParams) => {
-  return '/';
+export const getVideoDetailPageLink = (params: VideoDetailPageParams["params"]) => {
+  return `/videos/detail/${params.videoId}`;
 };
