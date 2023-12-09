@@ -1,5 +1,6 @@
 import { f } from "@/src/shared/styles/functions";
 import { responsiveStyle } from "@/src/shared/styles/functions/layout.css";
+import { vars } from "@fastcampus/themes";
 import { style } from "@vanilla-extract/css";
 
 export const wrapper = style([
@@ -54,4 +55,40 @@ export const title = style([
       maxHeight: "none",
     },
   }),
+]);
+
+export const infoWrapper = style([
+  f.wFull,
+  f.flex,
+  f.justifyBetween,
+  responsiveStyle({
+    md: {
+      paddingTop: "12px",
+    },
+    sm: {
+      paddingTop: "8px",
+    },
+  }),
+]);
+
+export const likeWrapper = style([
+  f.color.scale.gray[800],
+  f.flex,
+  f.alignCenter,
+  {
+    flexShrink: 0,
+    height: "2.25rem",
+    borderRadius: "1.125rem",
+    backgroundColor: vars.colors.$scale.gray[200],
+    padding: "0 0.75rem",
+    fontSize: "0.875rem",
+    fontWeight: 700,
+  },
+]);
+
+export const panelWrapper = style([
+  f.wFull,
+  {
+    paddingTop: "12px",
+  },
 ]);
