@@ -25,7 +25,8 @@
     "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.5.3"
+    "react-intersection-observer": "^9.5.3",
+    "react-youtube": "^10.1.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
