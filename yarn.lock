@@ -4586,6 +4586,7 @@ __metadata:
     react-dom: ^18.2.0
     react-intersection-observer: ^9.5.3
     react-youtube: ^10.1.0
+    swiper: ^11.0.5
     typescript: ^5.2.2
     vitest: ^0.34.6
   languageName: unknown
@@ -20315,6 +20316,13 @@ __metadata:
   version: 10.3.1
   resolution: "swiper@npm:10.3.1"
   checksum: 9a785930ca0ab0683d7e5e116c25a38e1f8818d6f9e93848125bdf3e1874e12a6c3b9f4e9c54668e4accc2440a6f031de98cfc01a1b0068c77f8de4115034e4d
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.0.5":
+  version: 11.0.5
+  resolution: "swiper@npm:11.0.5"
+  checksum: 83b125d16733a66ed5f58627c81263116e39eea5cead92667d2e24692ff94632de9aa05fec1ed80dc352779c0d7525e9a18424fce1c39c5e970823414b212edb
   languageName: node
   linkType: hard
 
