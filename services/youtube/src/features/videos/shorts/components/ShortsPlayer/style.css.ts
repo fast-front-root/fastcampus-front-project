@@ -9,6 +9,7 @@ export const infoWrapper = style([
   {
     bottom: "16px",
     left: "16px",
+    zIndex: 2,
   },
 ]);
 
