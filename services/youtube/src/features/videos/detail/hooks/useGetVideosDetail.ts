@@ -1,5 +1,5 @@
+import { GetVideosDetailRequestParams, GetVideosDetailResponse, getVideosDetail } from "@/src/shared/api/youtube/client/videoDetail/getVideosDetail";
 import { UseSuspenseQueryResult, useSuspenseQuery } from "@tanstack/react-query";
-import { GetVideosDetailRequestParams, GetVideosDetailResponse, getVideosDetail } from "../api/getVideosDetail";
 
 type Params = GetVideosDetailRequestParams;
 

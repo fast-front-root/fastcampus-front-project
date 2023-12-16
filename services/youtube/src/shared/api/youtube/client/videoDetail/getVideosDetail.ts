@@ -9,6 +9,7 @@ export type GetVideosDetailRequestParams = {
 export type VideoDetail = VideoListItem &
   VideoStatistics & {
     channelInfo: Channel & ChannelStatistics;
+    videoType: 'short' | 'long';
   };
 
 export type GetVideosDetailResponse = {

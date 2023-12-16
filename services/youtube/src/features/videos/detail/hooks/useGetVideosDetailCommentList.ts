@@ -1,5 +1,5 @@
 import { InfiniteData, UseSuspenseInfiniteQueryResult, useSuspenseInfiniteQuery } from "@tanstack/react-query";
-import { GetVideosDetailCommentListRequestParams, GetVideosDetailCommentListResponse, getVideosDetailCommentList } from "../api/getVideosDetailCommentList";
+import { GetVideosDetailCommentListRequestParams, GetVideosDetailCommentListResponse, getVideosDetailCommentList } from "@/src/shared/api/youtube/client/videoDetail/getVideosDetailCommentList";
 
 type Params = Pick<GetVideosDetailCommentListRequestParams, "videoId"> & {
   initPageToken?: string;
